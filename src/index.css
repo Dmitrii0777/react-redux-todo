@@ -1,0 +1,75 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --family: "Josefin Sans", sans-serif;
+  --fs-sm: 12px;
+  --fs-md: 14px;
+  --fs-lg: 18px;
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --radii: 5px;
+  --radii-full: 50%;
+
+  /* Light Theme */
+  --color-white: #fff;
+  --backg: hsl(0, 0%, 98%);
+  --bg-input: #fff;
+  --color-input: hsl(235, 14%, 26%);
+  --plh-color: hsl(236, 9%, 61%);
+  --bd: hsl(236, 33%, 92%);
+  --bd-bottom: hsl(236, 33%, 92%);
+  --col-list-in: hsl(235, 19%, 35%);
+  --col-filter-link: hsl(236, 9%, 61%);
+  --hover-filter-link: hsla(235, 19%, 35%, 1);
+
+  --active-link: #5d93fd;
+
+  --backg-linear: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+
+  --shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  --backg-img-deskt: url(./assets/images/bg-desktop-light.jpg);
+  --backg-img-mob: url(./assets/images/bg-mobile-light.jpg);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --backg: hsl(235, 21%, 11%);
+  --bg-input: hsl(235, 24%, 19%);
+  --color-input: hsl(234, 39%, 85%);
+  --plh-color: hsl(234, 11%, 52%);
+  --bd: hsl(237, 14%, 26%);
+  --bd-bottom: hsla(235, 14%, 26%, 1);
+  --col-list-in: hsl(234, 39%, 85%);
+  --col-filter-link: hsla(235, 16%, 42%, 1);
+  --hover-filter-link: hsla(236, 32%, 92%, 1);
+
+  --backg-linear: linear-gradient(var(--bg-input), var(--bg-input)) padding-box,
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+
+  --shadow: 0px 35px 50px rgba(0, 0, 0, 0.5);
+  --backg-img-deskt: url(./assets/images/bg-desktop-dark.jpg);
+  --backg-img-mob: url(./assets/images/bg-mobile-dark.jpg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* outline: none; */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--family);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-normal);
+  background: var(--backg);
+  -webkit-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}

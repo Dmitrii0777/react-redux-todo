@@ -1,0 +1,19 @@
+.footer {
+  padding: 40px 0 70px;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  color: var(--col-filter-link);
+  -webkit-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 576px) {
+  .footer {
+    padding: 50px 0;
+  }
+}

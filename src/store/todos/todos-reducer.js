@@ -1,0 +1,62 @@
+import {
+  COMPLETED_TODOS,
+  SET_TODOS,
+  REMOVE_TODOS,
+  SET_MOUSE_ENTER,
+  SET_MOUSE_LEAVE,
+  CLEAR_COMPLETED,
+  SET_DRAG_AND_DROP,
+} from "./todos-actions";
+
+const initialState = {
+  todos: [],
+  btnDelete: null,
+};
+
+export const todoReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case SET_TODOS:
+      return {
+        ...state,
+        btnDelete: null,
+        todos: [...state.todos, payload],
+      };
+    case REMOVE_TODOS:
+      return {
+        ...state,
+        btnDelete: null,
+        todos: state.todos.filter((todo) => todo.text !== payload),
+      };
+    case COMPLETED_TODOS:
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === payload ? { ...todo, completed: !todo.completed } : todo
+        ),
+      };
+    case SET_MOUSE_ENTER:
+      return {
+        ...state,
+        btnDelete: payload,
+      };
+    case SET_MOUSE_LEAVE:
+      return {
+        ...state,
+        btnDelete: payload,
+      };
+    case CLEAR_COMPLETED:
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo ? { ...todo, completed: false } : todo
+        ),
+      };
+    case SET_DRAG_AND_DROP:
+      return {
+        ...state,
+        todos: payload,
+      };
+    default:
+      return state;
+  }
+};
