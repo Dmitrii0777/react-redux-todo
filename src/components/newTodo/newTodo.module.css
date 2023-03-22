@@ -5,27 +5,15 @@
 }
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 48px;
   width: 100%;
   padding: 10px 60px;
   border-radius: var(--radii);
   background-color: var(--bg-input);
-  -webkit-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
-  -webkit-transition: background-color 0.2s ease-in-out,
-    -webkit-box-shadow 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out,
-    -webkit-box-shadow 0.2s ease-in-out;
-  -o-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
-    -webkit-box-shadow 0.2s ease-in-out;
 }
 
 .text_input {
@@ -36,44 +24,12 @@
   font-size: var(--fs-sm);
   color: var(--color-input);
   background-color: var(--bg-input);
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.text_input::-webkit-input-placeholder {
-  font-size: var(--fs-sm);
-  color: var(--plh-color);
-  -webkit-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
-}
-
-.text_input::-moz-placeholder {
-  font-size: var(--fs-sm);
-  color: var(--plh-color);
-  -moz-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
-}
-
-.text_input:-ms-input-placeholder {
-  font-size: var(--fs-sm);
-  color: var(--plh-color);
-  -ms-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
-}
-
-.text_input::-ms-input-placeholder {
-  font-size: var(--fs-sm);
-  color: var(--plh-color);
-  -ms-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
 }
 
 .text_input::placeholder {
   font-size: var(--fs-sm);
   color: var(--plh-color);
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
 
@@ -83,18 +39,6 @@
   }
   .text_input {
     font-size: var(--fs-lg);
-  }
-  .text_input::-webkit-input-placeholder {
-    font-size: var(--fs-md);
-  }
-  .text_input::-moz-placeholder {
-    font-size: var(--fs-md);
-  }
-  .text_input:-ms-input-placeholder {
-    font-size: var(--fs-md);
-  }
-  .text_input::-ms-input-placeholder {
-    font-size: var(--fs-md);
   }
   .text_input::placeholder {
     font-size: var(--fs-md);

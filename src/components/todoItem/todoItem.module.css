@@ -1,10 +1,6 @@
 .item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 10px 60px;
   min-height: 52px;
@@ -13,8 +9,6 @@
   cursor: grab;
   border-bottom: 1px solid var(--bd-bottom);
   background-color: var(--bg-input);
-  -webkit-transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-  -o-transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
@@ -24,14 +18,8 @@
 }
 
 .element_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
 }
@@ -43,9 +31,11 @@
   font-size: var(--fs-sm);
   color: var(--col-list-in);
   word-wrap: break-word;
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
+}
+
+.text_decoration {
+  text-decoration: line-through;
 }
 
 @media screen and (min-width: 576px) {

@@ -7,8 +7,6 @@
   font-size: 14px;
   text-align: center;
   color: var(--col-filter-link);
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
 

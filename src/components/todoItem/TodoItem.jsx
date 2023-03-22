@@ -74,10 +74,9 @@ export const TodoItem = ({ todo }) => {
       />
       <div className={styles.element_wrap}>
         <p
-          className={styles.text_input}
-          style={{
-            textDecoration: completed && "line-through",
-          }}
+          className={`${styles.text_input} ${
+            completed ? styles.text_decoration : ""
+          }`}
         >
           {text}
         </p>

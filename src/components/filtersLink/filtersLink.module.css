@@ -1,9 +1,5 @@
 .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 19px;
 }
@@ -13,14 +9,10 @@
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
   color: var(--col-filter-link);
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
 
 .link:hover {
   color: var(--hover-filter-link);
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }

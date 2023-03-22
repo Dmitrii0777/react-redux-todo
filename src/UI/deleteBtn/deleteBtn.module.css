@@ -3,16 +3,13 @@
   top: 50%;
   right: 4%;
   font-size: 16px;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
   background: transparent;
-  -webkit-transform: translateY(-50%) scale(0);
-  -ms-transform: translateY(-50%) scale(0);
   transform: translateY(-50%) scale(0);
-  -webkit-transition: -webkit-transform 0.2s ease ease-in-out;
-  transition: -webkit-transform 0.2s ease ease-in-out;
-  -o-transition: transform 0.2s ease ease-in-out;
-  transition: transform 0.2s ease ease-in-out;
-  transition: transform 0.2s ease ease-in-out,
-    -webkit-transform 0.2s ease ease-in-out;
+  transition: ease-in-out 0.2s;
+}
+
+.delete_todo.show {
+  transform: translateY(-50%) scale(1);
 }

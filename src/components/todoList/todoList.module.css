@@ -8,13 +8,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  -webkit-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
-  transition: -webkit-box-shadow 0.2s ease-in-out;
-  -o-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
 }
 
 @media screen and (min-width: 576px) {

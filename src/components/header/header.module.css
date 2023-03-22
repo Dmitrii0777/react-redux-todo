@@ -5,14 +5,8 @@
 }
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -22,20 +16,12 @@
   font-size: 30px;
   line-height: 30px;
   color: var(--color-white);
-  -webkit-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
 
 .theme {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 26px;
   height: 26px;
@@ -45,16 +31,12 @@
 .moon {
   background-image: url(../../assets/images/icon-moon.svg);
   background-repeat: no-repeat;
-  -webkit-transition: background-image 0.2s ease-in-out;
-  -o-transition: background-image 0.2s ease-in-out;
   transition: background-image 0.2s ease-in-out;
 }
 
 .sun {
   background-image: url(../../assets/images/icon-sun.svg);
   background-repeat: no-repeat;
-  -webkit-transition: background-image 0.2s ease-in-out;
-  -o-transition: background-image 0.2s ease-in-out;
   transition: background-image 0.2s ease-in-out;
 }
 

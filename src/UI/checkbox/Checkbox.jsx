@@ -18,13 +18,7 @@ export const Checkbox = ({ onChange, onClick, onKeyPress, completed }) => (
         onKeyPress={onKeyPress}
       />
       <span
-        className={styles.check_box}
-        style={{
-          background: completed
-            ? "linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))"
-            : null,
-          border: completed ? "none" : null,
-        }}
+        className={`${styles.check_box} ${completed ? styles.show : ""}`}
         onClick={onClick}
       >
         {completed ? <Check /> : null}
