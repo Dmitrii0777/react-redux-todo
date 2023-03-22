@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 // REDUX
 import { useDispatch } from "react-redux";
 
+// PROP-TYPES
+import PropTypes from "prop-types";
+
 // COMPONENTS
 import { FilterLink } from "components/filtersLink/FilterLink";
 
@@ -45,4 +48,8 @@ export const FiltersTodo = ({ todos }) => {
       )}
     </>
   );
+};
+
+FiltersTodo.propTypes = {
+  todos: PropTypes.array,
 };

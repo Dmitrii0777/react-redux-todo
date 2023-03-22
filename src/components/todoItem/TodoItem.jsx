@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 // LIBRARY
 import { Reorder } from "framer-motion";
 
+// PROP-TYPES
+import PropTypes from "prop-types";
+
 // COMPONENYS
 import { Checkbox } from "UI/checkbox/Checkbox";
 import { DeleteBtn } from "UI/deleteBtn/DeleteBtn";
@@ -86,4 +89,8 @@ export const TodoItem = ({ todo }) => {
       </div>
     </Reorder.Item>
   );
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.object,
 };
