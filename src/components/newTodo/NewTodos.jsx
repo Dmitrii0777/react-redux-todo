@@ -1,9 +1,16 @@
-import { useState } from "react";
+// REACT
+import React, { useState } from "react";
+
+// REDUX
 import { useDispatch } from "react-redux";
 
-import { setTodods } from "../../store/todos/todos-actions";
-import { Checkbox } from "../../UI/checkbox/Checkbox";
+// COMPONENTS
+import { Checkbox } from "UI/checkbox/Checkbox";
 
+// STORE
+import { setTodods } from "store/todos/todos-actions";
+
+// STYLES
 import styles from "./newTodo.module.css";
 
 export const NewTodos = () => {

@@ -1,5 +1,7 @@
-import { ReactComponent as Check } from "../../assets/images/icon-check.svg";
+// ICON
+import { ReactComponent as Check } from "assets/images/icon-check.svg";
 
+// STYLES
 import styles from "./checkbox.module.css";
 
 export const Checkbox = ({ onChange, onClick, onKeyPress, completed }) => {

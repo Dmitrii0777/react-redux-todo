@@ -1,9 +1,16 @@
-import { useEffect, useState } from "react";
+// REACT
+import React, { useEffect, useState } from "react";
+
+// REDUX
 import { useDispatch } from "react-redux";
 
-import { FilterLink } from "../filtersLink/FilterLink";
-import { clearCompleted } from "../../store/todos/todos-actions";
+// COMPONENTS
+import { FilterLink } from "components/filtersLink/FilterLink";
 
+// STORE
+import { clearCompleted } from "store/todos/todos-actions";
+
+// STYLES
 import styles from "./filtersTodo.module.css";
 
 export const FiltersTodo = ({ todos }) => {

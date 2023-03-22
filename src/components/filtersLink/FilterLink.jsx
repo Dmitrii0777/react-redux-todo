@@ -1,5 +1,7 @@
+// ROUTER
 import { NavLink } from "react-router-dom";
 
+// STYLES
 import styles from "./filtersLink.module.css";
 
 export const FilterLink = () => {

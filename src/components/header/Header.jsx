@@ -1,8 +1,13 @@
-import { useEffect } from "react";
+// REACT
+import React, { useEffect } from "react";
+
+// REDUX
 import { useSelector, useDispatch } from "react-redux";
 
-import { setTheme } from "../../store/theme/theme-actions";
+// STORE
+import { setTheme } from "store/theme/theme-actions";
 
+// STYLES
 import styles from "./header.module.css";
 
 export const Header = () => {

@@ -1,8 +1,10 @@
-import { Header } from "../header";
-import { NewTodos } from "../newTodo/NewTodos";
-import { TodoList } from "../todoList/TodoList";
-import { Footer } from "../footer/Footer";
+// COMPONENTS
+import { Header } from "components/header";
+import { NewTodos } from "components/newTodo/NewTodos";
+import { TodoList } from "components/todoList/TodoList";
+import { Footer } from "components/footer/Footer";
 
+// STYLES
 import styles from "./app.module.css";
 
 export const App = () => {

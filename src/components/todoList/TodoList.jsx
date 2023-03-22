@@ -1,12 +1,21 @@
+// ROUTER
 import { useParams, useLocation } from "react-router-dom";
+
+// REDUX
 import { useSelector, useDispatch } from "react-redux";
+
+// LIBRARY
 import { Reorder, AnimatePresence } from "framer-motion";
 
-import { TodoItem } from "../todoItem";
-import { FiltersTodo } from "../filtersTodo/FiltersTodo";
-import { selectVisibleTodos } from "../../store/todos/todos-selectors";
-import { setDragAndDrop } from "../../store/todos/todos-actions";
+// COMPONENTS
+import { TodoItem } from "components/todoItem";
+import { FiltersTodo } from "components/filtersTodo/FiltersTodo";
 
+// STORE
+import { selectVisibleTodos } from "store/todos/todos-selectors";
+import { setDragAndDrop } from "store/todos/todos-actions";
+
+// STYLES
 import styles from "./todoList.module.css";
 
 export const TodoList = () => {
@@ -15,8 +24,6 @@ export const TodoList = () => {
 
   const dispatch = useDispatch();
   const todos = useSelector((state) => selectVisibleTodos(state, filter));
-
-  console.log(todos);
 
   function setTodoList(newValue) {
     const loc = location.pathname === "/" ? "/all" : location.pathname;

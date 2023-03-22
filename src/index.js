@@ -1,13 +1,21 @@
+// REACT
 import React from "react";
 import ReactDOM from "react-dom/client";
+
+// REDUX
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+
+// ROUTER
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { store, persistor } from "./store";
-
+// COMPONENTS
 import { App } from "./components/app";
 
+// STORE
+import { store, persistor } from "./store";
+
+// STYLES
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

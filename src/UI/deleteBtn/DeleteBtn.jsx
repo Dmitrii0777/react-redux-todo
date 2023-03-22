@@ -1,5 +1,7 @@
-import { ReactComponent as Close } from "../../assets/images/icon-cross.svg";
+// ICON
+import { ReactComponent as Close } from "assets/images/icon-cross.svg";
 
+// STYLES
 import styles from "./deleteBtn.module.css";
 
 export const DeleteBtn = ({ id, btnDelete, onClick }) => {

@@ -1,16 +1,23 @@
+// REDUX
 import { useSelector, useDispatch } from "react-redux";
+
+// LIBRARY
 import { Reorder } from "framer-motion";
 
-import { Checkbox } from "../../UI/checkbox/Checkbox";
-import { DeleteBtn } from "../../UI/deleteBtn/DeleteBtn";
-import { selectTodods } from "../../store/todos/todos-selectors";
+// COMPONENYS
+import { Checkbox } from "UI/checkbox/Checkbox";
+import { DeleteBtn } from "UI/deleteBtn/DeleteBtn";
+
+// STORE
+import { selectTodods } from "store/todos/todos-selectors";
 import {
   completedTodods,
   removeTodos,
   setMouseEnter,
   setMouseLeave,
-} from "../../store/todos/todos-actions";
+} from "store/todos/todos-actions";
 
+// STYLES
 import styles from "./todoItem.module.css";
 
 const variants = {
