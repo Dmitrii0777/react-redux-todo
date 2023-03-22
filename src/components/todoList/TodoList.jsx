@@ -16,6 +16,8 @@ export const TodoList = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => selectVisibleTodos(state, filter));
 
+  console.log(todos);
+
   function setTodoList(newValue) {
     const loc = location.pathname === "/" ? "/all" : location.pathname;
 
