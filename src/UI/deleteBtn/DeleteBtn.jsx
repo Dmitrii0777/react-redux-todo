@@ -2,16 +2,17 @@
 import PropTypes from "prop-types";
 
 // ICON
-import { ReactComponent as Close } from "assets/images/icon-cross.svg";
+import { ReactComponent as Close } from "@assets/images/icon-cross.svg";
 
 // STYLES
 import styles from "./deleteBtn.module.css";
 
-export const DeleteBtn = ({ id, btnDelete, onClick }) => (
+export const DeleteBtn = ({ onClick, onBlur }) => (
   <>
     <button
-      className={`${styles.delete_todo} ${btnDelete === id ? styles.show : ""}`}
+      className={`${styles.deleteTodo} `}
       onClick={onClick}
+      onBlur={onBlur}
     >
       <Close />
     </button>

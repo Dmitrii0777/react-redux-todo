@@ -5,10 +5,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 // COMPONENTS
-import { Checkbox } from "UI/checkbox/Checkbox";
+import { Checkbox } from "@UI/checkbox/Checkbox";
 
 // STORE
-import { setTodods } from "store/todos/todos-actions";
+import { setTodods } from "@store/todos/todos-actions";
 
 // STYLES
 import styles from "./newTodo.module.css";
@@ -36,30 +36,38 @@ export const NewTodos = () => {
     setCompleted(false);
   };
 
+  const handleCheckboxChange = (event) => {
+    setCompleted(event.target.checked);
+  };
+
+  const handleCheckboxKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setText(event.target.value);
+  };
+
   return (
     <section className={styles.new_todo}>
-      <div className="container ">
-        <form onSubmit={handleSubmit}>
-          <div className={styles.wrapper}>
-            <Checkbox
-              completed={completed}
-              onChange={(event) => setCompleted(event.target.checked)}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") {
-                  handleSubmit(e);
-                }
-              }}
-            />
-            <input
-              type="text"
-              value={text}
-              className={styles.text_input}
-              placeholder="Create a new todo..."
-              onChange={(event) => setText(event.target.value)}
-            />
-          </div>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.wrapper}>
+          <Checkbox
+            completed={completed}
+            onChange={handleCheckboxChange}
+            onKeyPress={handleCheckboxKeyPress}
+          />
+          <input
+            type="text"
+            value={text}
+            className={styles.text_input}
+            placeholder="Create a new todo..."
+            onChange={handleInputChange}
+          />
+        </div>
+      </form>
     </section>
   );
 };

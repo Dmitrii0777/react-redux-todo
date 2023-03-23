@@ -1,23 +1,34 @@
 // ROUTER
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 // STYLES
 import styles from "./filtersLink.module.css";
 
 export const FilterLink = () => {
-  const activeStyle = ({ isActive }) => ({
-    color: isActive ? "var(--active-link)" : null,
-  });
+  const { filter } = useParams();
 
   return (
     <div className={styles.content}>
-      <NavLink to="/" className={styles.link} style={activeStyle}>
+      <NavLink
+        to="/all"
+        className={`${styles.link} ${filter === "all" ? styles.isActive : ""}`}
+      >
         All
       </NavLink>
-      <NavLink to="/active" className={styles.link} style={activeStyle}>
+      <NavLink
+        to="/active"
+        className={`${styles.link} ${
+          filter === "active" ? styles.isActive : ""
+        }`}
+      >
         Active
       </NavLink>
-      <NavLink to="/completed" className={styles.link} style={activeStyle}>
+      <NavLink
+        to="/completed"
+        className={`${styles.link} ${
+          filter === "completed" ? styles.isActive : ""
+        }`}
+      >
         Completed
       </NavLink>
     </div>

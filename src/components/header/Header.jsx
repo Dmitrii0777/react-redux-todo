@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // STORE
-import { setTheme } from "store/theme/theme-actions";
+import { setTheme } from "@store/theme/theme-actions";
 
 // STYLES
 import styles from "./header.module.css";
@@ -22,24 +22,24 @@ export const Header = () => {
     document.body.setAttribute("data-theme", theme);
   }, [theme]);
 
+  const handleThemeKeyPress = (event) => {
+    if (event.key === "Enter") {
+      toggleTheme();
+    }
+  };
+
   return (
     <header className={styles.header}>
-      <div className="container">
-        <div className={styles.wrapper}>
-          <h1 className={styles.title}>TODO</h1>
-          <div
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                toggleTheme();
-              }
-            }}
-            className={`${styles.theme} ${
-              theme === "light" ? styles.moon : styles.sun
-            }`}
-            onClick={toggleTheme}
-            tabIndex={0}
-          ></div>
-        </div>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>TODO</h1>
+        <div
+          onKeyPress={handleThemeKeyPress}
+          className={`${styles.theme} ${
+            theme === "light" ? styles.moon : styles.sun
+          }`}
+          onClick={toggleTheme}
+          tabIndex={0}
+        ></div>
       </div>
     </header>
   );

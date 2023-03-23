@@ -29,7 +29,7 @@
   transition: color 0.2s ease-in-out;
 }
 
-.link_mb {
+.linksBottom {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
   border-radius: var(--radii);
 }
 
-.link_wrapper {
+.linksWrapper {
   padding: 19px;
 }
 

@@ -17,14 +17,14 @@
   border-top-right-radius: var(--radii);
 }
 
-.element_wrap {
+.elementWrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.text_input {
+.textInput {
   margin: 0;
   max-width: 100%;
   font-weight: var(--fw-normal);
@@ -34,21 +34,12 @@
   transition: color 0.2s ease-in-out;
 }
 
-.text_decoration {
+.textDecoration {
   text-decoration: line-through;
 }
 
 @media screen and (min-width: 576px) {
   .item {
     min-height: 65px;
-  }
-
-  .check_box {
-    width: 24px;
-    height: 24px;
-  }
-
-  .text_input {
-    font-size: var(--fs-lg);
   }
 }

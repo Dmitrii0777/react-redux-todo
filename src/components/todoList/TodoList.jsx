@@ -8,12 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Reorder, AnimatePresence } from "framer-motion";
 
 // COMPONENTS
-import { TodoItem } from "components/todoItem";
-import { FiltersTodo } from "components/filtersTodo/FiltersTodo";
+import { TodoItem } from "@components/todoItem";
+import { FiltersTodo } from "@components/filtersTodo/FiltersTodo";
 
 // STORE
-import { selectVisibleTodos } from "store/todos/todos-selectors";
-import { setDragAndDrop } from "store/todos/todos-actions";
+import { selectVisibleTodos } from "@store/todos/todos-selectors";
+import { setDragAndDrop } from "@store/todos/todos-actions";
 
 // STYLES
 import styles from "./todoList.module.css";
@@ -35,22 +35,20 @@ export const TodoList = () => {
 
   return (
     <section className={styles.todo}>
-      <div className="container">
-        <Reorder.Group
-          as="ol"
-          axis="y"
-          values={todos}
-          onReorder={setTodoList}
-          className={styles.list}
-        >
-          <AnimatePresence initial={false}>
-            {todos.map((todo) => (
-              <TodoItem key={todo.id} todo={todo} />
-            ))}
-          </AnimatePresence>
-        </Reorder.Group>
-        <FiltersTodo todos={todos} />
-      </div>
+      <Reorder.Group
+        as="ol"
+        axis="y"
+        values={todos}
+        onReorder={setTodoList}
+        className={styles.list}
+      >
+        <AnimatePresence initial={false}>
+          {todos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))}
+        </AnimatePresence>
+      </Reorder.Group>
+      <FiltersTodo todos={todos} />
     </section>
   );
 };

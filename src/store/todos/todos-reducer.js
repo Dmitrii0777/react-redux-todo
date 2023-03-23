@@ -2,7 +2,7 @@ import {
   COMPLETED_TODOS,
   SET_TODOS,
   REMOVE_TODOS,
-  SET_MOUSE_ENTER,
+  // SET_MOUSE_ENTER,
   SET_MOUSE_LEAVE,
   CLEAR_COMPLETED,
   SET_DRAG_AND_DROP,
@@ -34,11 +34,11 @@ export const todoReducer = (state = initialState, { type, payload }) => {
           todo.id === payload ? { ...todo, completed: !todo.completed } : todo
         ),
       };
-    case SET_MOUSE_ENTER:
-      return {
-        ...state,
-        btnDelete: payload,
-      };
+    // case SET_MOUSE_ENTER:
+    //   return {
+    //     ...state,
+    //     btnDelete: payload,
+    //   };
     case SET_MOUSE_LEAVE:
       return {
         ...state,

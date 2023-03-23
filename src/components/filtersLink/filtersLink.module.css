@@ -16,3 +16,7 @@
   color: var(--hover-filter-link);
   transition: color 0.2s ease-in-out;
 }
+
+.link.isActive {
+  color: var(--active-link);
+}

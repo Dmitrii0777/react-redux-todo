@@ -8,17 +8,16 @@ import { Reorder } from "framer-motion";
 import PropTypes from "prop-types";
 
 // COMPONENYS
-import { Checkbox } from "UI/checkbox/Checkbox";
-import { DeleteBtn } from "UI/deleteBtn/DeleteBtn";
+import { Checkbox } from "@UI/checkbox/Checkbox";
+import { DeleteBtn } from "@UI/deleteBtn/DeleteBtn";
 
 // STORE
-import { selectTodods } from "store/todos/todos-selectors";
+// import { selectTodods } from "store/todos/todos-selectors";
 import {
   completedTodods,
   removeTodos,
-  setMouseEnter,
   setMouseLeave,
-} from "store/todos/todos-actions";
+} from "@store/todos/todos-actions";
 
 // STYLES
 import styles from "./todoItem.module.css";
@@ -39,52 +38,55 @@ const variants = {
 };
 
 export const TodoItem = ({ todo }) => {
-  const { btnDelete } = useSelector(selectTodods);
+  const btnDelete = useSelector((state) => state.todos.btnDelete);
   const dispatch = useDispatch();
 
   const { completed, id, text } = todo;
-
-  const handleMouseEnter = (id) => {
-    dispatch(setMouseEnter(id));
-  };
 
   const handleMouseLeave = (id) => {
     dispatch(setMouseLeave(id));
   };
 
+  const handleCheckboxKeyPress = (event) => {
+    if (event.key === " " || event.key === "Enter") {
+      dispatch(completedTodods(id));
+    }
+  };
+
+  const handleCheckboxChange = (event) => {
+    dispatch(completedTodods(event.target.checked));
+  };
+
   return (
     <Reorder.Item
+      {...variants}
       tabIndex={0}
       value={todo}
-      {...variants}
-      className={styles.item}
-      onFocus={() => handleMouseEnter(id)}
-      onMouseEnter={() => handleMouseEnter(id)}
+      className={`${styles.item}`}
+      onFocus={() => handleMouseLeave(id)}
+      onMouseEnter={() => handleMouseLeave(id)}
       onMouseLeave={() => handleMouseLeave(null)}
     >
       <Checkbox
         completed={completed}
         onClick={() => dispatch(completedTodods(id))}
-        onChange={(event) => dispatch(completedTodods(event.target.checked))}
-        onKeyPress={(e) => {
-          if (e.key === " " || e.key === "Enter") {
-            dispatch(completedTodods(id));
-          }
-        }}
+        onChange={handleCheckboxChange}
+        onKeyPress={handleCheckboxKeyPress}
       />
-      <div className={styles.element_wrap}>
+      <div className={styles.elementWrap}>
         <p
-          className={`${styles.text_input} ${
-            completed ? styles.text_decoration : ""
+          className={`${styles.textInput} ${
+            completed ? styles.textDecoration : ""
           }`}
         >
           {text}
         </p>
-        <DeleteBtn
-          id={id}
-          btnDelete={btnDelete}
-          onClick={() => dispatch(removeTodos(text))}
-        />
+        {btnDelete === id && (
+          <DeleteBtn
+            onClick={() => dispatch(removeTodos(text))}
+            onBlur={() => handleMouseLeave(null)}
+          />
+        )}
       </div>
     </Reorder.Item>
   );
