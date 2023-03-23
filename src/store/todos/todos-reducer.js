@@ -3,14 +3,14 @@ import {
   SET_TODOS,
   REMOVE_TODOS,
   // SET_MOUSE_ENTER,
-  SET_MOUSE_LEAVE,
+  SET_DELETE_ITEM,
   CLEAR_COMPLETED,
   SET_DRAG_AND_DROP,
 } from "./todos-actions";
 
 const initialState = {
   todos: [],
-  btnDelete: null,
+  selectedToDoForDeletion: null,
 };
 
 export const todoReducer = (state = initialState, { type, payload }) => {
@@ -18,13 +18,13 @@ export const todoReducer = (state = initialState, { type, payload }) => {
     case SET_TODOS:
       return {
         ...state,
-        btnDelete: null,
+        selectedToDoForDeletion: null,
         todos: [...state.todos, payload],
       };
     case REMOVE_TODOS:
       return {
         ...state,
-        btnDelete: null,
+        selectedToDoForDeletion: null,
         todos: state.todos.filter((todo) => todo.text !== payload),
       };
     case COMPLETED_TODOS:
@@ -34,15 +34,10 @@ export const todoReducer = (state = initialState, { type, payload }) => {
           todo.id === payload ? { ...todo, completed: !todo.completed } : todo
         ),
       };
-    // case SET_MOUSE_ENTER:
-    //   return {
-    //     ...state,
-    //     btnDelete: payload,
-    //   };
-    case SET_MOUSE_LEAVE:
+    case SET_DELETE_ITEM:
       return {
         ...state,
-        btnDelete: payload,
+        selectedToDoForDeletion: payload,
       };
     case CLEAR_COMPLETED:
       return {

@@ -1,5 +1,5 @@
 // ROUTER
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
@@ -12,23 +12,32 @@ import { TodoItem } from "@components/todoItem";
 import { FiltersTodo } from "@components/filtersTodo/FiltersTodo";
 
 // STORE
-import { selectVisibleTodos } from "@store/todos/todos-selectors";
 import { setDragAndDrop } from "@store/todos/todos-actions";
 
 // STYLES
 import styles from "./todoList.module.css";
+import { useMemo } from "react";
 
 export const TodoList = () => {
   const { filter } = useParams();
-  const location = useLocation();
 
   const dispatch = useDispatch();
-  const todos = useSelector((state) => selectVisibleTodos(state, filter));
+  const allTodos = useSelector((state) => state.todos.todos);
+
+  const filterTodos = useMemo(() => {
+    if (filter === "all") {
+      return allTodos;
+    } else if (filter === "active") {
+      return allTodos.filter((item) => !item.completed);
+    } else if (filter === "completed") {
+      return allTodos.filter((item) => item.completed);
+    } else {
+      return allTodos;
+    }
+  }, [allTodos, filter]);
 
   function setTodoList(newValue) {
-    const loc = location.pathname === "/" ? "/all" : location.pathname;
-
-    if (loc === "/all") {
+    if (filter === "all") {
       dispatch(setDragAndDrop(newValue));
     }
   }
@@ -38,17 +47,17 @@ export const TodoList = () => {
       <Reorder.Group
         as="ol"
         axis="y"
-        values={todos}
+        values={filterTodos}
         onReorder={setTodoList}
         className={styles.list}
       >
         <AnimatePresence initial={false}>
-          {todos.map((todo) => (
+          {filterTodos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))}
         </AnimatePresence>
       </Reorder.Group>
-      <FiltersTodo todos={todos} />
+      <FiltersTodo todos={filterTodos} />
     </section>
   );
 };

@@ -42,4 +42,7 @@
   .item {
     min-height: 65px;
   }
+  .textInput {
+    font-size: var(--fs-lg);
+  }
 }
