@@ -6,14 +6,30 @@
   --fs-sm: 12px;
   --fs-md: 14px;
   --fs-lg: 18px;
+
   --fw-normal: 400;
   --fw-bold: 700;
+
+  --line-height-s: 14px;
+  --line-height-m: 18px;
 
   --radii: 5px;
   --radii-full: 50%;
 
-  /* Light Theme */
   --color-white: #fff;
+  --active-link: #5d93fd;
+}
+
+::before,
+::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Light Theme */
+body[data-theme="light"] {
   --backg: hsl(0, 0%, 98%);
   --bg-input: #fff;
   --color-input: hsl(235, 14%, 26%);
@@ -24,18 +40,18 @@
   --col-filter-link: hsl(236, 9%, 61%);
   --hover-filter-link: hsla(235, 19%, 35%, 1);
 
-  --active-link: #5d93fd;
-
   --backg-linear: linear-gradient(#ffffff, #ffffff) padding-box,
     linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
 
   --shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   --backg-img-deskt: url("./assets/images/bg-desktop-light.jpg");
   --backg-img-mob: url("./assets/images/bg-mobile-light.jpg");
+
+  --opacity-icon: 1;
 }
 
 /* Dark Theme */
-[data-theme="dark"] {
+body[data-theme="dark"] {
   --backg: hsl(235, 21%, 11%);
   --bg-input: hsl(235, 24%, 19%);
   --color-input: hsl(234, 39%, 85%);
@@ -52,20 +68,16 @@
   --shadow: 0px 35px 50px rgba(0, 0, 0, 0.5);
   --backg-img-deskt: url("./assets/images/bg-desktop-dark.jpg");
   --backg-img-mob: url("./assets/images/bg-mobile-dark.jpg");
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --opacity-icon: 0.7;
 }
 
 body {
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--family);
   font-size: var(--fs-md);
   font-weight: var(--fw-normal);
-  background: var(--backg);
-  transition: background 0.2s ease-in-out;
+  line-height: var(--line-height-s);
 }

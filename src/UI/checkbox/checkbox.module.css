@@ -32,7 +32,7 @@
   box-shadow: 0 0 0 0.1em var(--color-white);
 }
 
-.checkInput:hover + .checkBsox {
+.checkInput:hover + .checkBox {
   box-shadow: 0 0 0 0.1em var(--color-white);
 }
 

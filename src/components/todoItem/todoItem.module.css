@@ -44,5 +44,6 @@
   }
   .textInput {
     font-size: var(--fs-lg);
+    line-height: var(--line-height-m);
   }
 }

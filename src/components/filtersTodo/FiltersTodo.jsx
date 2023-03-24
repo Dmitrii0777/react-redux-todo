@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 // COMPONENTS
-import { FilterLink } from "@components/filtersLink/FilterLink";
+import FilterLink from "@components/filtersLink";
 
 // STORE
 import { clearCompleted } from "@store/todos/todos-actions";
@@ -16,7 +16,7 @@ import { clearCompleted } from "@store/todos/todos-actions";
 // STYLES
 import styles from "./filtersTodo.module.css";
 
-export const FiltersTodo = ({ todos }) => {
+const FiltersTodo = ({ todos }) => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth < 576);
   const dispatch = useDispatch();
 
@@ -51,6 +51,8 @@ export const FiltersTodo = ({ todos }) => {
     </>
   );
 };
+
+export default FiltersTodo;
 
 FiltersTodo.propTypes = {
   todos: PropTypes.array,

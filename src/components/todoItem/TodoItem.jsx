@@ -36,13 +36,13 @@ const VARIANT = {
   },
 };
 
-export const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo }) => {
   const selectedToDoForDeletion = useSelector(
     (state) => state.todos.selectedToDoForDeletion
   );
   const dispatch = useDispatch();
 
-  const handleMouseEnter = () => dispatch(setMouse(todo.id));
+  const handleMouseEnter = (e) => dispatch(setMouse(todo.id));
 
   const handleMouseLeave = () => dispatch(setMouse(null));
 
@@ -97,3 +97,5 @@ export const TodoItem = ({ todo }) => {
 TodoItem.propTypes = {
   todo: PropTypes.object,
 };
+
+export default TodoItem;

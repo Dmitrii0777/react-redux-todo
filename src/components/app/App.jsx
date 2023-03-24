@@ -1,22 +1,27 @@
 // COMPONENTS
-import { Header } from "@components/header";
-import { NewTodos } from "@components/newTodo/NewTodos";
-import { TodoList } from "@components/todoList/TodoList";
-import { Footer } from "@components/footer/Footer";
+import Header from "@components/header";
+import NewTodos from "@components/newTodo";
+import TodoList from "@components/todoList";
+import Footer from "@components/footer";
 
 // STYLES
 import styles from "./app.module.css";
 
-export const App = () => {
+const App = () => {
   return (
-    <div>
-      <div className={styles.banner}></div>
-      <div className={styles.container}>
-        <Header />
-        <NewTodos />
-        <TodoList />
-        <Footer />
+    <>
+      <div className={styles.fullscreen}>
+        <div className={styles.wrapper}>
+          <div className={styles.container}>
+            <Header />
+            <NewTodos />
+            <TodoList />
+            <Footer />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
+
+export default App;

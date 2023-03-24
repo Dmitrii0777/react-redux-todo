@@ -9,7 +9,3 @@
   transform: translateY(-50%);
   transition: ease-in-out 0.2s;
 }
-
-/* .deleteTodo.show {
-  transform: translateY(-50%) scale(1);
-} */

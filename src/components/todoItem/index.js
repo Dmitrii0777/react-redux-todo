@@ -1,3 +1,1 @@
-import { TodoItem } from "./TodoItem";
-
-export { TodoItem };
+export { default } from "./TodoItem";

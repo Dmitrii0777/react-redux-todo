@@ -1,3 +1,1 @@
-import { FilterLink } from "./FilterLink";
-
-export { FilterLink };
+export { default } from "./FilterLink";

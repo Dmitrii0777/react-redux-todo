@@ -10,7 +10,7 @@ import { setTheme } from "@store/theme/theme-actions";
 // STYLES
 import styles from "./header.module.css";
 
-export const Header = () => {
+const Header = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
 
@@ -44,3 +44,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

@@ -10,7 +10,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // COMPONENTS
-import { App } from "./components/app/App";
+import App from "@components/app/App";
 
 // STORE
 import { store, persistor } from "./store";

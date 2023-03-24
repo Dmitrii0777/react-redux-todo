@@ -4,7 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 // STYLES
 import styles from "./filtersLink.module.css";
 
-export const FilterLink = () => {
+const FilterLink = () => {
   const { filter } = useParams();
 
   return (
@@ -34,3 +34,5 @@ export const FilterLink = () => {
     </div>
   );
 };
+
+export default FilterLink;

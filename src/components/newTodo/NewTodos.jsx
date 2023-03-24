@@ -13,7 +13,7 @@ import { setTodods } from "@store/todos/todos-actions";
 // STYLES
 import styles from "./newTodo.module.css";
 
-export const NewTodos = () => {
+const NewTodos = () => {
   const [text, setText] = useState("");
   const [completed, setCompleted] = useState(false);
 
@@ -71,3 +71,5 @@ export const NewTodos = () => {
     </section>
   );
 };
+
+export default NewTodos;

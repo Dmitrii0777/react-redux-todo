@@ -39,8 +39,10 @@
   }
   .text_input {
     font-size: var(--fs-lg);
+    line-height: var(--line-height-m);
   }
   .text_input::placeholder {
     font-size: var(--fs-md);
+    line-height: var(--line-height-m);
   }
 }
