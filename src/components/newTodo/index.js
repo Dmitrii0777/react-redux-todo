@@ -1,1 +1,3 @@
-export { default } from "./NewTodos";
+import { NewTodos } from "./NewTodos";
+
+export { NewTodos };

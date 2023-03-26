@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 // COMPONENTS
-import { Checkbox } from "@UI/checkbox/Checkbox";
+import { Checkbox } from "@UI/checkbox";
 
 // STORE
 import { setTodods } from "@store/todos/todos-actions";
@@ -13,7 +13,7 @@ import { setTodods } from "@store/todos/todos-actions";
 // STYLES
 import styles from "./newTodo.module.css";
 
-const NewTodos = () => {
+export const NewTodos = () => {
   const [text, setText] = useState("");
   const [completed, setCompleted] = useState(false);
 
@@ -51,7 +51,7 @@ const NewTodos = () => {
   };
 
   return (
-    <section className={styles.new_todo}>
+    <section className={styles.newTodo}>
       <form onSubmit={handleSubmit}>
         <div className={styles.wrapper}>
           <Checkbox
@@ -62,7 +62,7 @@ const NewTodos = () => {
           <input
             type="text"
             value={text}
-            className={styles.text_input}
+            className={styles.textInput}
             placeholder="Create a new todo..."
             onChange={handleInputChange}
           />
@@ -71,5 +71,3 @@ const NewTodos = () => {
     </section>
   );
 };
-
-export default NewTodos;

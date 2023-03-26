@@ -8,8 +8,8 @@ import { Reorder } from "framer-motion";
 import PropTypes from "prop-types";
 
 // COMPONENYS
-import { Checkbox } from "@UI/checkbox/Checkbox";
-import { DeleteBtn } from "@UI/deleteBtn/DeleteBtn";
+import { Checkbox } from "@UI/checkbox";
+import { DeleteBtn } from "@UI/deleteBtn";
 
 // STORE
 import {
@@ -36,13 +36,13 @@ const VARIANT = {
   },
 };
 
-const TodoItem = ({ todo }) => {
+export const TodoItem = ({ todo }) => {
   const selectedToDoForDeletion = useSelector(
     (state) => state.todos.selectedToDoForDeletion
   );
   const dispatch = useDispatch();
 
-  const handleMouseEnter = (e) => dispatch(setMouse(todo.id));
+  const handleMouseEnter = () => dispatch(setMouse(todo.id));
 
   const handleMouseLeave = () => dispatch(setMouse(null));
 
@@ -64,13 +64,13 @@ const TodoItem = ({ todo }) => {
 
   return (
     <Reorder.Item
-      {...VARIANT}
       tabIndex={0}
       value={todo}
       className={`${styles.item}`}
       onFocus={handleItemFocus}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...VARIANT}
     >
       <Checkbox
         completed={todo.completed}
@@ -97,5 +97,3 @@ const TodoItem = ({ todo }) => {
 TodoItem.propTypes = {
   todo: PropTypes.object,
 };
-
-export default TodoItem;

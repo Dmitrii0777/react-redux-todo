@@ -1,1 +1,3 @@
-export { default } from "./FiltersTodo";
+import { FiltersTodo } from "./FiltersTodo";
+
+export { FiltersTodo };

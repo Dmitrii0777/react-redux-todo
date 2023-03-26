@@ -7,7 +7,7 @@ import { ReactComponent as EmailIcon } from "@assets/images/Email.svg";
 // STYLES
 import styles from "./plugIcon.module.css";
 
-const PlugIcon = () => {
+export const PlugIcon = () => {
   return (
     <div className={styles.content}>
       <EmailIcon />
@@ -18,5 +18,3 @@ const PlugIcon = () => {
     </div>
   );
 };
-
-export default PlugIcon;

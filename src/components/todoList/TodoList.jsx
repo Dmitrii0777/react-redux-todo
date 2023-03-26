@@ -11,28 +11,31 @@ import { useSelector, useDispatch } from "react-redux";
 import { Reorder, AnimatePresence, motion } from "framer-motion";
 
 // COMPONENTS
-import PlugIcon from "@components/plugIcon";
-import TodoItem from "@components/todoItem";
-import FiltersTodo from "@components/filtersTodo";
+import { PlugIcon } from "@components/plugIcon";
+import { TodoItem } from "@components/todoItem";
+import { FiltersTodo } from "@components/filtersTodo";
 
 // STORE
 import { setDragAndDrop } from "@store/todos/todos-actions";
 
+// CONSTANTS
+import { FILTERS_STATE } from "@constants/constants";
+
 // STYLES
 import styles from "./todoList.module.css";
 
-const TodoList = () => {
+export const TodoList = () => {
   const { filter } = useParams();
 
   const dispatch = useDispatch();
   const allTodos = useSelector((state) => state.todos.todos);
 
   const filterTodos = useMemo(() => {
-    if (filter === "all") {
+    if (filter === FILTERS_STATE.ALL) {
       return allTodos;
-    } else if (filter === "active") {
+    } else if (filter === FILTERS_STATE.ACTIVE) {
       return allTodos.filter((item) => !item.completed);
-    } else if (filter === "completed") {
+    } else if (filter === FILTERS_STATE.COMPLETED) {
       return allTodos.filter((item) => item.completed);
     } else {
       return allTodos;
@@ -40,7 +43,7 @@ const TodoList = () => {
   }, [allTodos, filter]);
 
   function setTodoList(newValue) {
-    if (filter === "all") {
+    if (filter === FILTERS_STATE.ALL) {
       dispatch(setDragAndDrop(newValue));
     }
   }
@@ -74,5 +77,3 @@ const TodoList = () => {
     </section>
   );
 };
-
-export default TodoList;

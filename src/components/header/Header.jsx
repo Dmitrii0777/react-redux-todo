@@ -7,15 +7,18 @@ import { useSelector, useDispatch } from "react-redux";
 // STORE
 import { setTheme } from "@store/theme/theme-actions";
 
+// CONSTANTS
+import { LIGHT, DARK } from "@constants/constants";
+
 // STYLES
 import styles from "./header.module.css";
 
-const Header = () => {
+export const Header = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
 
   const toggleTheme = () => {
-    dispatch(setTheme(theme === "light" ? "dark" : "light"));
+    dispatch(setTheme(theme === LIGHT ? DARK : LIGHT));
   };
 
   useEffect(() => {
@@ -35,7 +38,7 @@ const Header = () => {
         <div
           onKeyPress={handleThemeKeyPress}
           className={`${styles.theme} ${
-            theme === "light" ? styles.moon : styles.sun
+            theme === LIGHT ? styles.moon : styles.sun
           }`}
           onClick={toggleTheme}
           tabIndex={0}
@@ -44,5 +47,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

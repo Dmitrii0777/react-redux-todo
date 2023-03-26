@@ -20,7 +20,6 @@ export const DeleteBtn = ({ onClick, onBlur }) => (
 );
 
 DeleteBtn.propTypes = {
-  id: PropTypes.number,
-  btnDelete: PropTypes.number,
   onClick: PropTypes.func,
+  onBlur: PropTypes.func,
 };

@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 // COMPONENTS
-import FilterLink from "@components/filtersLink";
+import { FilterLink } from "@components/filtersLink/index";
 
 // STORE
 import { clearCompleted } from "@store/todos/todos-actions";
@@ -16,13 +16,17 @@ import { clearCompleted } from "@store/todos/todos-actions";
 // STYLES
 import styles from "./filtersTodo.module.css";
 
-const FiltersTodo = ({ todos }) => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth < 576);
+const MAX_MOBILE_WIDTH = 576;
+
+export const FiltersTodo = ({ todos }) => {
+  const [isDesktop, setIsDesktop] = useState(
+    window.innerWidth < MAX_MOBILE_WIDTH
+  );
   const dispatch = useDispatch();
 
-  const handleResize = () => setIsDesktop(window.innerWidth < 576);
-
   useEffect(() => {
+    const handleResize = () =>
+      setIsDesktop(window.innerWidth < MAX_MOBILE_WIDTH);
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -51,8 +55,6 @@ const FiltersTodo = ({ todos }) => {
     </>
   );
 };
-
-export default FiltersTodo;
 
 FiltersTodo.propTypes = {
   todos: PropTypes.array,

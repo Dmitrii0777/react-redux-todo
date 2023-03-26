@@ -1,1 +1,3 @@
-export { default } from "./PlugIcon";
+import { PlugIcon } from "./PlugIcon";
+
+export { PlugIcon };

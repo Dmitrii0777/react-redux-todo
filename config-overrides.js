@@ -7,6 +7,7 @@ module.exports = function override(config, env) {
     "@UI": "src/UI",
     "@assets": "src/assets",
     "@styles": "src/styles",
+    "@constants": "src/constants",
   })(config);
 
   return config;

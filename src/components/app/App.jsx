@@ -1,8 +1,8 @@
 // COMPONENTS
-import Header from "@components/header";
-import NewTodos from "@components/newTodo";
-import TodoList from "@components/todoList";
-import Footer from "@components/footer";
+import { Header } from "@components/header";
+import { NewTodos } from "@components/newTodo";
+import { TodoList } from "@components/todoList";
+import { Footer } from "@components/footer";
 
 // STYLES
 import styles from "./app.module.css";

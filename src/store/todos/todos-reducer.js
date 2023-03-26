@@ -41,9 +41,7 @@ export const todoReducer = (state = initialState, { type, payload }) => {
     case CLEAR_COMPLETED:
       return {
         ...state,
-        todos: state.todos.map((todo) =>
-          todo ? { ...todo, completed: false } : todo
-        ),
+        todos: state.todos.map((todo) => ({ ...todo, completed: false })),
       };
     case SET_DRAG_AND_DROP:
       return {

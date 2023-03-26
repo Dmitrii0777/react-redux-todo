@@ -1,11 +1,8 @@
 import { SET_THEME } from "./theme-actions";
 
-const THEME_STATES = {
-  LIGHT: "light",
-  DARK: "dark",
-};
+import { LIGHT } from "@constants/constants";
 
-export const themeReducer = (state = THEME_STATES.LIGHT, { type, payload }) => {
+export const themeReducer = (state = LIGHT, { type, payload }) => {
   switch (type) {
     case SET_THEME:
       return payload;
