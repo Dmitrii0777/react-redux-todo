@@ -2,6 +2,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 // LIBRARY
+import cn from "classnames";
 import { Reorder } from "framer-motion";
 
 // PROP-TYPES
@@ -80,9 +81,9 @@ export const TodoItem = ({ todo }) => {
       />
       <div className={styles.elementWrap}>
         <p
-          className={`${styles.textInput} ${
-            todo.completed ? styles.textDecoration : ""
-          }`}
+          className={cn(styles.textInput, {
+            [styles.textDecoration]: todo.completed,
+          })}
         >
           {todo.text}
         </p>

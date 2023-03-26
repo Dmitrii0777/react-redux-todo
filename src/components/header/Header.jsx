@@ -36,12 +36,12 @@ export const Header = () => {
       <div className={styles.wrapper}>
         <h1 className={styles.title}>TODO</h1>
         <div
-          onKeyPress={handleThemeKeyPress}
+          tabIndex={0}
           className={`${styles.theme} ${
             theme === LIGHT ? styles.moon : styles.sun
           }`}
           onClick={toggleTheme}
-          tabIndex={0}
+          onKeyPress={handleThemeKeyPress}
         ></div>
       </div>
     </header>

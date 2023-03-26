@@ -1,6 +1,9 @@
 // ROUTER
 import { NavLink, useParams } from "react-router-dom";
 
+// LIBRARY CLASSNAMES
+import cn from "classnames";
+
 // CONSTANTS
 import { FILTERS_STATE } from "@constants/constants";
 
@@ -14,25 +17,25 @@ export const FilterLink = () => {
     <div className={styles.content}>
       <NavLink
         to={`/${FILTERS_STATE.ALL}`}
-        className={`${styles.link} ${
-          filter === FILTERS_STATE.ALL ? styles.isActive : ""
-        }`}
+        className={cn(styles.link, {
+          [styles.isActive]: filter === FILTERS_STATE.ALL,
+        })}
       >
         All
       </NavLink>
       <NavLink
         to={`/${FILTERS_STATE.ACTIVE}`}
-        className={`${styles.link} ${
-          filter === FILTERS_STATE.ACTIVE ? styles.isActive : ""
-        }`}
+        className={cn(styles.link, {
+          [styles.isActive]: filter === FILTERS_STATE.ACTIVE,
+        })}
       >
         Active
       </NavLink>
       <NavLink
         to={`/${FILTERS_STATE.COMPLETED}`}
-        className={`${styles.link} ${
-          filter === FILTERS_STATE.COMPLETED ? styles.isActive : ""
-        }`}
+        className={cn(styles.link, {
+          [styles.isActive]: filter === FILTERS_STATE.COMPLETED,
+        })}
       >
         Completed
       </NavLink>

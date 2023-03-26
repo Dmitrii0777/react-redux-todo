@@ -1,6 +1,9 @@
 // PROP-TYPES
 import PropTypes from "prop-types";
 
+// LIBRARY
+import cn from "classnames";
+
 // ICON
 import { ReactComponent as Check } from "@assets/images/icon-check.svg";
 
@@ -18,7 +21,7 @@ export const Checkbox = ({ onChange, onClick, onKeyPress, completed }) => (
         onKeyPress={onKeyPress}
       />
       <span
-        className={`${styles.checkBox} ${completed ? styles.show : ""}`}
+        className={cn(styles.checkBox, { [styles.show]: completed })}
         onClick={onClick}
       >
         {completed && <Check />}
