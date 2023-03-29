@@ -16,6 +16,6 @@ export const DeleteBtn = ({ onClick, onBlur }) => (
 );
 
 DeleteBtn.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  onBlur: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  onBlur: PropTypes.func,
 };

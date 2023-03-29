@@ -35,6 +35,6 @@ export const Checkbox = ({ onChange, onClick, onKeyPress, completed }) => (
 Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
-  onKeyPress: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  onKeyPress: PropTypes.func,
 };
