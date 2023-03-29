@@ -4,11 +4,17 @@ import React, { useEffect } from "react";
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
 
+// LIBRARY
+import cn from "classnames";
+
+// SERVICES
+import { changeCssVariables } from "../../services/changeCssVariables";
+
 // STORE
 import { setTheme } from "@store/theme/theme-actions";
 
 // CONSTANTS
-import { LIGHT, DARK } from "@constants/constants";
+import { LIGHT, DARK } from "@constants/theme";
 
 // STYLES
 import styles from "./header.module.css";
@@ -23,6 +29,7 @@ export const Header = () => {
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
+    changeCssVariables(theme);
   }, [theme]);
 
   const handleThemeKeyPress = (event) => {
@@ -37,9 +44,10 @@ export const Header = () => {
         <h1 className={styles.title}>TODO</h1>
         <div
           tabIndex={0}
-          className={`${styles.theme} ${
-            theme === LIGHT ? styles.moon : styles.sun
-          }`}
+          className={cn(styles.theme, {
+            [styles.moon]: theme === LIGHT,
+            [styles.sun]: theme !== LIGHT,
+          })}
           onClick={toggleTheme}
           onKeyPress={handleThemeKeyPress}
         ></div>

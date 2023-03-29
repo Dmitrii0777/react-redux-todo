@@ -8,13 +8,12 @@
   text-decoration: none;
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
-  color: var(--col-filter-link);
-  transition: color 0.2s ease-in-out;
+  color: var(--theme-default-tx-link-descr);
+  transition: color var(--transition);
 }
 
 .link:hover {
-  color: var(--hover-filter-link);
-  transition: color 0.2s ease-in-out;
+  color: var(--theme-default-hover);
 }
 
 .link.isActive {

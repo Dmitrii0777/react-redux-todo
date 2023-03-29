@@ -4,10 +4,10 @@
 
 .description {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--fs-md);
   text-align: center;
-  color: var(--col-filter-link);
-  transition: color 0.2s ease-in-out;
+  color: var(--theme-default-tx-link-descr);
+  transition: color var(--transition);
 }
 
 @media screen and (min-width: 576px) {

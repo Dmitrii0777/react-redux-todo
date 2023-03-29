@@ -9,17 +9,13 @@ import styles from "./deleteBtn.module.css";
 
 export const DeleteBtn = ({ onClick, onBlur }) => (
   <>
-    <button
-      className={`${styles.deleteTodo} `}
-      onClick={onClick}
-      onBlur={onBlur}
-    >
+    <button className={styles.deleteTodo} onClick={onClick} onBlur={onBlur}>
       <Close />
     </button>
   </>
 );
 
 DeleteBtn.propTypes = {
-  onClick: PropTypes.func,
-  onBlur: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };

@@ -20,19 +20,21 @@ export const Checkbox = ({ onChange, onClick, onKeyPress, completed }) => (
         onChange={onChange}
         onKeyPress={onKeyPress}
       />
-      <span
-        className={cn(styles.checkBox, { [styles.show]: completed })}
-        onClick={onClick}
-      >
-        {completed && <Check />}
-      </span>
+      <div className={styles.gradient}>
+        <span
+          className={cn(styles.checkBox, { [styles.show]: completed })}
+          onClick={onClick}
+        >
+          {completed && <Check />}
+        </span>
+      </div>
     </label>
   </>
 );
 
 Checkbox.propTypes = {
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  onKeyPress: PropTypes.func,
-  completed: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onKeyPress: PropTypes.func.isRequired,
 };

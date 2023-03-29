@@ -7,7 +7,7 @@ import { Footer } from "@components/footer";
 // STYLES
 import styles from "./app.module.css";
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <div className={styles.fullscreen}>
@@ -23,5 +23,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;

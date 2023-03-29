@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 // COMPONENTS
-import { FilterLink } from "@components/filtersLink/index";
+import { FilterLink } from "@components/filtersLink";
 
 // STORE
 import { clearCompleted } from "@store/todos/todos-actions";
@@ -57,5 +57,5 @@ export const FiltersTodo = ({ todos }) => {
 };
 
 FiltersTodo.propTypes = {
-  todos: PropTypes.array,
+  todos: PropTypes.array.isRequired,
 };

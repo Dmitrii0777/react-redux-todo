@@ -10,7 +10,7 @@
   font-size: 30px;
   line-height: 30px;
   color: var(--color-white);
-  transition: color 0.2s ease-in-out;
+  transition: color var(--transition);
 }
 
 .theme {
@@ -25,13 +25,13 @@
 .moon {
   background-image: url(../../assets/images/icon-moon.svg);
   background-repeat: no-repeat;
-  transition: background-image 0.2s ease-in-out;
+  transition: background-image var(--transition);
 }
 
 .sun {
   background-image: url(../../assets/images/icon-sun.svg);
   background-repeat: no-repeat;
-  transition: background-image 0.2s ease-in-out;
+  transition: background-image var(--transition);
 }
 
 @media screen and (min-width: 576px) {

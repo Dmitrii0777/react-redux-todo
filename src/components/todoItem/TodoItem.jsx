@@ -1,12 +1,11 @@
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
 
-// LIBRARY
-import cn from "classnames";
-import { Reorder } from "framer-motion";
-
 // PROP-TYPES
 import PropTypes from "prop-types";
+
+// LIBRARY
+import cn from "classnames";
 
 // COMPONENYS
 import { Checkbox } from "@UI/checkbox";
@@ -22,38 +21,19 @@ import {
 // STYLES
 import styles from "./todoItem.module.css";
 
-const VARIANT = {
-  initial: {
-    opacity: 0,
-    height: 0,
-  },
-  animate: {
-    opacity: 1,
-    height: "auto",
-  },
-  exit: {
-    opacity: 0,
-    height: 0,
-  },
-};
-
-export const TodoItem = ({ todo }) => {
+export const TodoItem = ({ completed, id, text }) => {
   const selectedToDoForDeletion = useSelector(
     (state) => state.todos.selectedToDoForDeletion
   );
   const dispatch = useDispatch();
 
-  const handleMouseEnter = () => dispatch(setMouse(todo.id));
-
   const handleMouseLeave = () => dispatch(setMouse(null));
 
-  const handleItemFocus = () => dispatch(setMouse(todo.id));
-
-  const handleCheckboxClick = () => dispatch(completedTodods(todo.id));
+  const handleCheckboxClick = () => dispatch(completedTodods(id));
 
   const handleCheckboxKeyPress = (event) => {
     if (event.key === " " || event.key === "Enter") {
-      dispatch(completedTodods(todo.id));
+      dispatch(completedTodods(id));
     }
   };
 
@@ -61,20 +41,12 @@ export const TodoItem = ({ todo }) => {
     dispatch(completedTodods(event.target.checked));
   };
 
-  const handleButtonClick = () => dispatch(removeTodos(todo.text));
+  const handleButtonClick = () => dispatch(removeTodos(text));
 
   return (
-    <Reorder.Item
-      tabIndex={0}
-      value={todo}
-      className={`${styles.item}`}
-      onFocus={handleItemFocus}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...VARIANT}
-    >
+    <>
       <Checkbox
-        completed={todo.completed}
+        completed={completed}
         onClick={handleCheckboxClick}
         onChange={handleCheckboxChange}
         onKeyPress={handleCheckboxKeyPress}
@@ -82,19 +54,21 @@ export const TodoItem = ({ todo }) => {
       <div className={styles.elementWrap}>
         <p
           className={cn(styles.textInput, {
-            [styles.textDecoration]: todo.completed,
+            [styles.textDecoration]: completed,
           })}
         >
-          {todo.text}
+          {text}
         </p>
-        {selectedToDoForDeletion === todo.id && (
+        {selectedToDoForDeletion === id && (
           <DeleteBtn onClick={handleButtonClick} onBlur={handleMouseLeave} />
         )}
       </div>
-    </Reorder.Item>
+    </>
   );
 };
 
 TodoItem.propTypes = {
-  todo: PropTypes.object,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };

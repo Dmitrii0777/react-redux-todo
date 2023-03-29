@@ -1,6 +1,6 @@
 import { SET_THEME } from "./theme-actions";
 
-import { LIGHT } from "@constants/constants";
+import { LIGHT } from "@constants/theme";
 
 export const themeReducer = (state = LIGHT, { type, payload }) => {
   switch (type) {

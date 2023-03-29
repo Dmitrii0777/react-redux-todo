@@ -8,21 +8,21 @@
   height: 130px;
   margin-bottom: 30px;
   opacity: var(--opacity-icon);
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity var(--transition);
 }
 
 .title {
   margin: 0 0 10px;
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
-  color: var(--col-list-in);
-  transition: color 0.2s ease-in-out;
+  color: var(--theme-default-tx-input);
+  transition: color var(--transition);
 }
 
 .description {
   font-size: var(--fs-sm);
-  color: var(--col-list-in);
-  transition: color 0.2s ease-in-out;
+  color: var(--theme-default-tx-input);
+  transition: color var(--transition);
 }
 
 @media screen and (min-width: 576px) {

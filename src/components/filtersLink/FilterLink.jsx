@@ -5,7 +5,7 @@ import { NavLink, useParams } from "react-router-dom";
 import cn from "classnames";
 
 // CONSTANTS
-import { FILTERS_STATE } from "@constants/constants";
+import { FILTERS_STATE } from "@constants/filters";
 
 // STYLES
 import styles from "./filtersLink.module.css";

@@ -16,13 +16,28 @@ import { TodoItem } from "@components/todoItem";
 import { FiltersTodo } from "@components/filtersTodo";
 
 // STORE
-import { setDragAndDrop } from "@store/todos/todos-actions";
+import { setDragAndDrop, setMouse } from "@store/todos/todos-actions";
 
 // CONSTANTS
-import { FILTERS_STATE } from "@constants/constants";
+import { FILTERS_STATE } from "@constants/filters";
 
 // STYLES
 import styles from "./todoList.module.css";
+
+const VARIANT = {
+  initial: {
+    opacity: 0,
+    height: 0,
+  },
+  animate: {
+    opacity: 1,
+    height: "auto",
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+  },
+};
 
 export const TodoList = () => {
   const { filter } = useParams();
@@ -48,6 +63,10 @@ export const TodoList = () => {
     }
   }
 
+  const handleMouseEnter = (id) => dispatch(setMouse(id));
+  const handleItemFocus = (id) => dispatch(setMouse(id));
+  const handleMouseLeave = () => dispatch(setMouse(null));
+
   return (
     <section className={styles.todo}>
       {allTodos.length > 0 ? (
@@ -60,7 +79,22 @@ export const TodoList = () => {
         >
           <AnimatePresence initial={false}>
             {filterTodos.map((todo) => (
-              <TodoItem key={todo.id} todo={todo} />
+              <Reorder.Item
+                tabIndex={0}
+                key={todo.id}
+                value={todo}
+                className={styles.item}
+                onFocus={() => handleItemFocus(todo.id)}
+                onMouseEnter={() => handleMouseEnter(todo.id)}
+                onMouseLeave={handleMouseLeave}
+                {...VARIANT}
+              >
+                <TodoItem
+                  completed={todo.completed}
+                  id={todo.id}
+                  text={todo.text}
+                />
+              </Reorder.Item>
             ))}
           </AnimatePresence>
         </Reorder.Group>
@@ -68,6 +102,7 @@ export const TodoList = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
           <PlugIcon />
