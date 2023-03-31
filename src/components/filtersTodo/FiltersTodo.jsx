@@ -1,17 +1,15 @@
 // REACT
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // REDUX
 import { useDispatch } from "react-redux";
+import { clearCompleted } from "@store/todos/todos-actions";
 
-// PROP-TYPES
+// LIBRARY
 import PropTypes from "prop-types";
 
-// COMPONENTS
+// MODULES
 import { FilterLink } from "@components/filtersLink";
-
-// STORE
-import { clearCompleted } from "@store/todos/todos-actions";
 
 // STYLES
 import styles from "./filtersTodo.module.css";

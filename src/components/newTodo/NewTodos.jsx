@@ -1,14 +1,12 @@
 // REACT
-import React, { useState } from "react";
+import { useState } from "react";
 
 // REDUX
 import { useDispatch } from "react-redux";
-
-// COMPONENTS
-import { Checkbox } from "@UI/checkbox";
-
-// STORE
 import { setTodods } from "@store/todos/todos-actions";
+
+// MODULES
+import { Checkbox } from "@UI/checkbox";
 
 // STYLES
 import styles from "./newTodo.module.css";

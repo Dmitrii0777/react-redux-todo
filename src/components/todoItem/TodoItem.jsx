@@ -1,22 +1,18 @@
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
-
-// PROP-TYPES
-import PropTypes from "prop-types";
-
-// LIBRARY
-import cn from "classnames";
-
-// COMPONENYS
-import { Checkbox } from "@UI/checkbox";
-import { DeleteBtn } from "@UI/deleteBtn";
-
-// STORE
 import {
   completedTodods,
   removeTodos,
   setMouse,
 } from "@store/todos/todos-actions";
+
+// LIBRARY
+import PropTypes from "prop-types";
+import cn from "classnames";
+
+// MODULES
+import { Checkbox } from "@UI/checkbox";
+import { DeleteBtn } from "@UI/deleteBtn";
 
 // STYLES
 import styles from "./todoItem.module.css";

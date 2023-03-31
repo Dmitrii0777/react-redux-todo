@@ -1,19 +1,15 @@
 // REACT
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
+import { setTheme } from "@store/theme/theme-actions";
 
 // LIBRARY
 import cn from "classnames";
 
-// SERVICES
-import { changeCssVariables } from "../../services/changeCssVariables";
-
-// STORE
-import { setTheme } from "@store/theme/theme-actions";
-
-// CONSTANTS
+// MODULES
+import { changeCssVariables } from "@services/changeCssVariables";
 import { LIGHT, DARK } from "@constants/theme";
 
 // STYLES

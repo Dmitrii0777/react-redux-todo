@@ -1,4 +1,4 @@
-// COMPONENTS
+// MODULES
 import { Header } from "@components/header";
 import { NewTodos } from "@components/newTodo";
 import { TodoList } from "@components/todoList";
@@ -9,17 +9,15 @@ import styles from "./app.module.css";
 
 export const App = () => {
   return (
-    <>
-      <div className={styles.fullscreen}>
-        <div className={styles.wrapper}>
-          <div className={styles.container}>
-            <Header />
-            <NewTodos />
-            <TodoList />
-            <Footer />
-          </div>
+    <div className={styles.fullscreen}>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <Header />
+          <NewTodos />
+          <TodoList />
+          <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 };

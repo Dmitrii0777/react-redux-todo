@@ -1,4 +1,4 @@
-// PROP-TYPES
+// LIBRARY
 import PropTypes from "prop-types";
 
 // ICON
@@ -8,11 +8,9 @@ import { ReactComponent as Close } from "@assets/images/icon-cross.svg";
 import styles from "./deleteBtn.module.css";
 
 export const DeleteBtn = ({ onClick, onBlur }) => (
-  <>
-    <button className={styles.deleteTodo} onClick={onClick} onBlur={onBlur}>
-      <Close />
-    </button>
-  </>
+  <button className={styles.deleteTodo} onClick={onClick} onBlur={onBlur}>
+    <Close />
+  </button>
 );
 
 DeleteBtn.propTypes = {

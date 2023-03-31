@@ -1,7 +1,5 @@
-// PROP-TYPES
-import PropTypes from "prop-types";
-
 // LIBRARY
+import PropTypes from "prop-types";
 import cn from "classnames";
 
 // ICON

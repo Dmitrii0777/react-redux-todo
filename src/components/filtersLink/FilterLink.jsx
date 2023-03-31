@@ -1,10 +1,8 @@
-// ROUTER
+// LIBRARY
+import cn from "classnames";
 import { NavLink, useParams } from "react-router-dom";
 
-// LIBRARY CLASSNAMES
-import cn from "classnames";
-
-// CONSTANTS
+// MODULES
 import { FILTERS_STATE } from "@constants/filters";
 
 // STYLES

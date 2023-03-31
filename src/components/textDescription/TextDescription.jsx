@@ -1,7 +1,7 @@
 // STYLES
-import styles from "./plugIcon.module.css";
+import styles from "./TextDescription.module.css";
 
-export const PlugIcon = () => {
+export const TextDescription = () => {
   return (
     <div className={styles.content}>
       <h1 className={styles.title}>There is nothing here</h1>

@@ -1,25 +1,20 @@
 // REACT
 import { useMemo } from "react";
 
-// ROUTER
-import { useParams } from "react-router-dom";
-
 // REDUX
 import { useSelector, useDispatch } from "react-redux";
+import { setDragAndDrop, setMouse } from "@store/todos/todos-actions";
 
 // LIBRARY
 import { Reorder, AnimatePresence, motion } from "framer-motion";
+import { useParams } from "react-router-dom";
 
-// COMPONENTS
-import { PlugIcon } from "@components/plugIcon";
+// MODULES
 import { TodoItem } from "@components/todoItem";
 import { FiltersTodo } from "@components/filtersTodo";
-
-// STORE
-import { setDragAndDrop, setMouse } from "@store/todos/todos-actions";
-
-// CONSTANTS
+import { TextDescription } from "@components/textDescription";
 import { FILTERS_STATE } from "@constants/filters";
+import { getChangeLocation } from "@services/getChangeLocation";
 
 // STYLES
 import styles from "./todoList.module.css";
@@ -58,7 +53,9 @@ export const TodoList = () => {
   }, [allTodos, filter]);
 
   function setTodoList(newValue) {
-    if (filter === FILTERS_STATE.ALL) {
+    const location = getChangeLocation(filter);
+
+    if (location === FILTERS_STATE.ALL) {
       dispatch(setDragAndDrop(newValue));
     }
   }
@@ -105,7 +102,7 @@ export const TodoList = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <PlugIcon />
+          <TextDescription />
         </motion.div>
       )}
       <FiltersTodo todos={filterTodos} />
