@@ -1,0 +1,65 @@
+.check {
+  display: flex;
+  align-items: center;
+}
+
+.checkInput {
+  position: absolute;
+  appearance: none;
+}
+
+.checkBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: 1px solid var(--theme-default-border);
+  border-radius: 50%;
+  background: var(--theme-default-bgitem);
+  transition: background var(--transition), border var(--transition);
+}
+
+.gradient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: -2.5em;
+}
+
+.gradient::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.show {
+  border: none;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  transition: background var(--transition);
+}
+
+.checkInput:focus + .gradient::before {
+  opacity: 1;
+}
+
+.checkInput:hover + .gradient::before {
+  opacity: 1;
+}
+
+@media screen and (min-width: 576px) {
+  .checkBox {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,40 @@
+.content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content svg {
+  width: 160px;
+  height: 130px;
+  margin-bottom: 30px;
+  opacity: var(--opacity-icon);
+  transition: opacity var(--transition);
+}
+
+.title {
+  margin: 0 0 10px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  color: var(--theme-default-tx-input);
+  transition: color var(--transition);
+}
+
+.description {
+  font-size: var(--fs-sm);
+  color: var(--theme-default-tx-input);
+  transition: color var(--transition);
+}
+
+@media screen and (min-width: 576px) {
+  .content svg {
+    width: 190px;
+    height: 160px;
+    margin-bottom: 20px;
+  }
+  .title {
+    font-size: var(--fs-lg);
+  }
+  .description {
+    font-size: var(--fs-md);
+  }
+}

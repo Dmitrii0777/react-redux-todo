@@ -1,0 +1,11 @@
+.deleteTodo {
+  position: absolute;
+  top: 60%;
+  right: 4%;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  transform: translateY(-60%);
+  transition: ease-in-out 0.2s;
+}

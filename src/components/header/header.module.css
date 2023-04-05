@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-weight: var(--fw-bold);
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--color-white);
+  transition: color var(--transition);
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.moon {
+  background-image: url(../../assets/images/icon-moon.svg);
+  background-repeat: no-repeat;
+  transition: background-image var(--transition);
+}
+
+.sun {
+  background-image: url(../../assets/images/icon-sun.svg);
+  background-repeat: no-repeat;
+  transition: background-image var(--transition);
+}
+
+@media screen and (min-width: 576px) {
+  .title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}

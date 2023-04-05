@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  color: var(--theme-default-tx-link-descr);
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--theme-default-hover);
+}
+
+.link.isActive {
+  color: var(--active-link);
+}

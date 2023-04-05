@@ -1,0 +1,17 @@
+.footer {
+  padding-top: 40px;
+}
+
+.description {
+  margin: 0;
+  font-size: var(--fs-md);
+  text-align: center;
+  color: var(--theme-default-tx-link-descr);
+  transition: color var(--transition);
+}
+
+@media screen and (min-width: 576px) {
+  .footer {
+    padding-top: 50px;
+  }
+}

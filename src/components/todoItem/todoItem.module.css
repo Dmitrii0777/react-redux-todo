@@ -1,0 +1,29 @@
+.elementWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.textInput {
+  margin: 0;
+  max-width: 100%;
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-sm);
+  color: var(--theme-default-tx-item);
+  word-wrap: break-word;
+  transition: color var(--transition);
+}
+
+.textDecoration {
+  text-decoration: line-through;
+  color: var(--theme-default-tx-decoration);
+  transition: color var(--transition);
+}
+
+@media screen and (min-width: 576px) {
+  .textInput {
+    font-size: var(--fs-lg);
+    line-height: var(--line-height-m);
+  }
+}
