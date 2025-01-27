@@ -12,16 +12,17 @@
 - Toggle between light and dark mode
 - Drag and drop the order of items in the list
 
-### Built using
+### Technologies used in the project:
 
 - HTML5 semantic markup
-- CSS module
-- Flexbox
-- Mobile-first workflow
+- Modular CSS
+- Flexbox for responsive layout
+- Mobile-first approach
 - [React](https://reactjs.org/) - JS-library
-- redux library
-- redux-persist library
-- react-router library
-- Framer-motion library
-- classNames library
-- prop-types
+- Redux for state management
+- Redux Persist for state persistence
+- React Router for navigation
+- Framer Motion for animations
+- ClassNames for conditional class management
+- Prop-Types for props validation
+
